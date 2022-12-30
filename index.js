@@ -16,7 +16,6 @@ app.use(express.urlencoded({ extended: true }));
 //connection to db
 mongoose.connect(process.env.DB_CONNECT, () => {
   console.log("Connected to db!");
-  app.listen(3000, () => console.log("Server Up and running"));
 });
 
 //View Engine Configuration
@@ -59,3 +58,5 @@ app
       res.redirect("/");
     });
   });
+
+  app.listen(3000, () => console.log("Server Up and running"));

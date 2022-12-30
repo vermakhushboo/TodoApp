@@ -24,7 +24,9 @@ app.set("view engine", "ejs");
 
 //GET Method
 app.get("/", (req, res) => {
-  res.render("todo.ejs");
+  TodoTask.find({}, (err, tasks) => {
+    res.render("todo.ejs", { todoTasks: tasks });
+  });
 });
 
 //POST Method
